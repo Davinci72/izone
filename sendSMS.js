@@ -3,7 +3,7 @@ const axios = require('axios');
 sendBulkSMS = (token,phone,msg,sender,uniqueID) => {
     // var timestamp = curDateTime();
     timestamp = Date.now();
-    var resultUrl = 'https://studiothirtyone.net:9000/outgoingBulk/bulkDlr';
+    var resultUrl = 'http://studiothirtyone.net:9000/outgoingBulk/bulkDlr';
     var sendSmsUrl = 'https://dtsvc.safaricom.com:8480/api/public/CMS/bulksms';
     // uniqueID = rand('1000','10000000');
    
