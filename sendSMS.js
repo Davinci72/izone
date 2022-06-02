@@ -14,7 +14,7 @@ sendBulkSMS = (token,phone,msg,sender,uniqueID) => {
             "userName": "rhodenneAPI",
             "channel": "sms",
             "packageId": "7079",
-            "oa": sender,
+            "oa": sender, 
             "msisdn": phone,
             "message": msg,
             "uniqueId": uniqueID,
