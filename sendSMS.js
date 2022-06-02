@@ -11,9 +11,9 @@ sendBulkSMS = (token,phone,msg,sender,uniqueID) => {
         "timeStamp": timestamp,
         "dataSet": [
           {
-            "userName": "rhodenne",
+            "userName": "rhodenneAPI",
             "channel": "sms",
-            "packageId": "8832",
+            "packageId": "7079",
             "oa": sender,
             "msisdn": phone,
             "message": msg,
