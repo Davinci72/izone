@@ -1,7 +1,7 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 const mysqlConnection = require('./db_config.js');
 const axios = require('axios');
-var apiUsername = 'rhodenne';
+var apiUsername = 'rhodenneAPI';
 var apiPassword = 'RHODENNEAPI@ps584';
 var apiCredentialsEndpoint = 'https://dsvc.safaricom.com:9480/api/auth/login';
 //var apiCredentialsEndpoint = 'http://localhost/sms/test.php';
