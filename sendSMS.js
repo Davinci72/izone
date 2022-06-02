@@ -4,7 +4,7 @@ sendBulkSMS = (token,phone,msg,sender,uniqueID) => {
     // var timestamp = curDateTime();
     timestamp = Date.now();
     var resultUrl = 'http://studiothirtyone.net:9000/outgoingBulk/bulkDlr';
-    var sendSmsUrl = 'https://dsvc.safaricom.com9480/api/public/SDP/sendSMSRequest';
+    var sendSmsUrl = 'https://dsvc.safaricom.com:9480/api/public/SDP/sendSMSRequest';
     // uniqueID = rand('1000','10000000');
    
     var rawJson = {
