@@ -35,12 +35,12 @@ logOutgoing = (sender, phone, message,uniqueID) => {
     });
   }
   updateDlr = (correlatorId,dlrStatus)=>{
-      mysqlConnection.query("UPDATE messagedetails SET status="+dlrStatus+" dlr="+dlrStatus+" WHERE message_id='"+correlatorId+"'",(err,rows,fields)=>{
+      mysqlConnection.query("UPDATE `messagedetails` SET `status`='"+dlrStatus+"', `dlr`='"+dlrStatus+"' WHERE `message_id`='"+correlatorId+"'",(err,rows,fields)=>{
         if(!err){
             console.log('Delivery Report Updated : ' + correlatorId);
         }
         else{
-            sql = "UPDATE messagedetails SET delivery_status='"+dlrStatus+"' WHERE unique_id='"+correlatorId+"'";
+            sql = "UPDATE `messagedetails` SET `status`='"+dlrStatus+"', `dlr`='"+dlrStatus+"' WHERE `message_id`='"+correlatorId+"'";
             console.log('Error Updating Delivery Status at here' + err + sql);
         }
     });
