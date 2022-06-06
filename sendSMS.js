@@ -22,6 +22,7 @@ sendBulkSMS = (token,phone,msg,sender,uniqueID) => {
           }
         ]
       }
+      //added dynamic sender variable
       console.log(rawJson);
     axios.post(sendSmsUrl,rawJson,{headers: {
         'Content-Type': 'application/json',
