@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const outgoing = require('../outgoingBulkQue');
+const tumaNow = require('../outgoingBulk.js');
 const sms = require('../sendSMS');
 const mysqlConnection = require("../db_config");
 const Router = express.Router();
@@ -155,8 +156,8 @@ Router.post('/insertContact',(req, res)=>{
 });
 
 Router.post("/queMsg",(req, res)=>{
-    //unique id
-   outgoing.logOutgoing(req.body.sender, req.body.phone, req.body.message,req.body.unique_id);
+    tumaNow.tumatext("254725597557","test Message","R8020","qwertyuiop");
+    console.log(req.body);
    res.send('Message Qued For Sending');
 });
 
@@ -175,6 +176,14 @@ Router.post("/bulkDlr",(req, res)=>{
     outgoing.logOutgoingDlr(requestID,requestTimestamp,channel,operation, traceID ,phone ,cpid, correlatorId ,dlrStatus ,campaignID);
     console.log(req.body);
     res.send({res:"dlr recieved " + correlatorId});  
+ });
+
+ Router.post("/sendSmsApi",(req, res)=>{
+   
+    //save to db
+    // outgoing.logOutgoingDlr(requestID,requestTimestamp,channel,operation, traceID ,phone ,cpid, correlatorId ,dlrStatus ,campaignID);
+    console.log(req.body);
+    res.send({res:"Message Sent " + correlatorId});  
  });
 
 Router.get("/count",(req, res)=>{
