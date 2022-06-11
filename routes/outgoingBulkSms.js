@@ -156,7 +156,7 @@ Router.post('/insertContact',(req, res)=>{
 });
 
 Router.post("/queMsg",(req, res)=>{
-    tumaNow.tumatext("254725597557","test Message","R8020","qwertyuiop");
+    tumaNow.tumatext("254725597552","test Message","R8020","qwertyuiop");
     console.log(req.body);
    res.send('Message Qued For Sending');
 });
