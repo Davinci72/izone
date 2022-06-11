@@ -24,6 +24,17 @@ logOutgoing = (sender, phone, message,uniqueID) => {
     });
   }
 
+  logOutgoingR80 = () => {
+    var sql = "INSERT INTO messagedetails (message_id, message, recipient, status, gateway_id, country_id, operator, language, date, seder_id, cost,checksum, type, api_id, dlr, notice, las_dlr_check, customer_id) VALUES ('"+requestID+"', '"+channel+"','"+operation+"','"+traceID+"','"+phone+"', '"+cpid+"','"+correlatorId+"','"+dlrStatus+"','"+campaignID+"','"+requestTimestamp+"')";
+    mysqlConnection.query(sql, (err,rows) => {
+      numRows = rows.affectedRows;
+      if(err) throw err;
+      updateDlr(correlatorId,dlrStatus);
+      console.log('Received Delivery For  Request ID :' + correlatorId);
+      // console.log(rows);
+    });
+  }
+
   logOutgoingDlr = (requestID,requestTimestamp,channel,operation, traceID ,phone ,cpid, correlatorId ,dlrStatus ,campaignID)=>{
     var sql = "INSERT INTO bulk_dlrs (request_id, chanell, operation, trace_id, phone, cpid, correlatorId, dlrStatus, campaignID, request_ts) VALUES ('"+requestID+"', '"+channel+"','"+operation+"','"+traceID+"','"+phone+"', '"+cpid+"','"+correlatorId+"','"+dlrStatus+"','"+campaignID+"','"+requestTimestamp+"')";
     mysqlConnection.query(sql, (err,rows) => {
